@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="hasLabels=true,timeFromCreateToActivate=5000" db_object_id="848ce01c53606250911631f0a0490ed2" label="J72_System Account  (Creation / Modification / Deletion)" max_length="40" name="x_58872_needit_u_rikkei_appinq_tb_j72_system_account_setting" type="collection">
+        <element choice="1" label="Use Category" max_length="40" name="u_rikkei_use_category" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Development" sequence="0" value="1"/>
+                <element inactive="true" inactive_on_update="true" label="-- New choice --" sequence="0" value="-- New choice --"/>
+                <element inactive_on_update="false" label="Production" sequence="1" value="2"/>
+            </choice>
+        </element>
+        <element label="Applicant Name" max_length="32" name="u_rikkei_ritm_opened_by" reference="sys_user" type="reference"/>
+        <element label="Submitted" max_length="40" name="u_rikkei_ritm_sys_created_on" type="glide_date_time"/>
+        <element label="Usage" max_length="255" name="u_rikkei_usage" type="string"/>
+        <element label="Address Code (4-digit+1-digit)" max_length="255" name="u_rikkei_address_code" type="string"/>
+        <element label="Logon Name" max_length="255" name="u_rikkei_logon_name" type="string"/>
+        <element choice="1" label="Interactive Logon" max_length="40" name="u_rikkei_interactive_logon" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Allow" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Prevent" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="Prevent--&gt;Allow" sequence="2" value="3"/>
+            </choice>
+        </element>
+        <element choice="1" label="State" max_length="40" name="u_rikkei_ritm_state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Open" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Work in Progress" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="Pending" sequence="5" value="-5"/>
+                <element inactive_on_update="false" label="Closed Complete" sequence="2" value="3"/>
+                <element inactive_on_update="false" label="Closed Incomplete" sequence="3" value="4"/>
+                <element inactive_on_update="false" label="Closed Skipped" sequence="4" value="7"/>
+            </choice>
+        </element>
+        <element label="Period" max_length="40" name="u_rikkei_period" type="glide_date"/>
+        <element choice="1" label="Application Type" max_length="40" name="u_rikkei_application_type" type="choice">
+            <choice>
+                <element inactive="true" inactive_on_update="true" label="-- New choice --" sequence="0" value="-- New choice --"/>
+                <element inactive_on_update="false" label="Modification" sequence="2" value="2"/>
+                <element inactive_on_update="false" label="Deletion" sequence="1" value="3"/>
+                <element inactive_on_update="false" label="Creation" sequence="0" value="1"/>
+            </choice>
+        </element>
+        <element label="Name of System" max_length="255" name="u_rikkei_name_system" type="string"/>
+        <element label="Management Department" max_length="255" name="u_rikkei_management_department" type="string"/>
+        <element choice="1" label="Usage Period Category" max_length="40" name="u_rikkei_usage_period_category" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Permanent" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Expiration Date" sequence="1" value="2"/>
+            </choice>
+        </element>
+        <element label="Requested Item No." max_length="32" name="u_rikkei_ritm_number" reference="sc_req_item" type="reference"/>
+        <element label="Management Representative (Contact) " max_length="32" name="u_rikkei_management_representative_contact" reference="sys_user" type="reference"/>
+        <element label="Additional Information" max_length="255" name="u_rikkei_additional_info" type="string"/>
+        <element choice="1" label="Mail Address" max_length="40" name="u_rikkei_mail_address" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Not required" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="Required" sequence="0" value="1"/>
+            </choice>
+        </element>
+        <element label="Management Representative ID" max_length="255" name="u_rikkei_management_representative_id" type="string"/>
+        <index name="index">
+            <element name="u_rikkei_ritm_number"/>
+        </index>
+        <index name="index2">
+            <element name="u_rikkei_ritm_opened_by"/>
+        </index>
+    </element>
+</database>
